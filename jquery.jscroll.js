@@ -118,6 +118,9 @@
 
             _setBindings = function() {
                 var $next = $e.find(_options.nextSelector).first();
+                if (!$next.length) {
+                    return false;
+                }
                 if (_options.autoTrigger && (_options.autoTriggerUntil === false || _options.autoTriggerUntil > 0)) {
                     _nextWrap($next);
                     if (_$body.height() <= _$window.height()) {
